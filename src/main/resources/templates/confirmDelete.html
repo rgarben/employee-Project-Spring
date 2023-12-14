@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<div th:replace="layout/head :: head"></div>
+<body>
+
+<nav th:replace="layout/menu :: menuJacaranda"></nav>
+
+<h1>Confirmar Eliminación</h1>
+
+	<p>¿Estás seguro de que deseas eliminar esta compañía?</p>
+	
+	<form th:action="@{'/confirmDelete/' + ${companyId} + '/ok'}" method="get">
+    <input class="btn btn-danger" type="submit" value="Eliminar">
+	</form>
+	
+	<a class="btn btn-primary" th:href="@{/listCompanies}">Cancelar</a>
+
+<div th:insert="layout/footer :: pie"></div>
+</body>
+</html>

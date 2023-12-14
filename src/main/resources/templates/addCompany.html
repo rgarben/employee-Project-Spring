@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<div th:replace="layout/head :: head"></div>
+<body>
+	
+<nav th:replace="layout/menu :: menuJacaranda"></nav>
+
+<h1>Agregar nueva compañia</h1>
+
+<form th:action="@{addedCompany}" th:object="${company}">
+  <div class="form-group row">
+    <label for="name" class="col-4 col-form-label">Nombre</label> 
+    <div class="col-8">
+      <input th:field="*{name}" id="name" name="name" placeholder="Introduce el nombre de la nueva compañia" type="text" required="required" class="form-control">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="address" class="col-4 col-form-label">Direccion</label> 
+    <div class="col-8">
+      <input th:field="*{address}" id="address" name="address" placeholder="Introduce la direccion de la nueva compañia" type="text" class="form-control" required="required">
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="city" class="col-4 col-form-label">Ciudad</label> 
+    <div class="col-8">
+      <input th:field="*{city}" id="city" name="city" placeholder="Introduce la ciudad de la nueva compañia" type="text" class="form-control" required="required">
+    </div>
+  </div> 
+  <div class="form-group row">
+    <div class="offset-4 col-8">
+      <button name="submit" type="submit" class="btn btn-primary">Añadir compañia</button>
+    </div>
+  </div>
+</form>
+
+<div th:insert="layout/footer :: pie"></div>
+</body>
+</html>

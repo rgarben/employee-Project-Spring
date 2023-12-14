@@ -4,15 +4,14 @@
 <body>
 <nav th:replace="layout/menu :: menuJacaranda"></nav>
 
-<h1>Lista de compañías</h1>
+<h1>Lista de compañia</h1>
 <table class="table">
   <thead>
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Nombre</th>
-      <th scope="col">Dirección</th>
-      <th scope="col">Ciudad</th>
-      <th scope="col"></th>
+      <th scope="col">name</th>
+      <th scope="col">address</th>
+      <th scope="col">city</th>
     </tr>
   </thead>
   <tbody>
@@ -21,9 +20,6 @@
       <td th:text="${company.name}"></td>
       <td th:text="${company.address}"></td>
       <td th:text="${company.city}"></td>
-	<td>
-	    <a class="btn btn-primary" th:href="@{'/confirmDelete/' + ${company.id}}">Eliminar</a>
-	</td>
     </tr>
   </tbody>
 </table>
