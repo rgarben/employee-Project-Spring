@@ -53,6 +53,18 @@ public class CompanyController {
 	    companyService.deleteCompany(companyId);
 	    return "redirect:/listCompanies";
 	}
-
+	
+	@GetMapping("/editCompany/{companyId}")
+	public String editCompany(@PathVariable Integer companyId, Model model) {
+		Company company = companyService.findById(companyId).orElse(null);
+		model.addAttribute("company", company);
+		return "editCompany";
+	}
+	
+	@GetMapping("/editCompany/{companyId}/edit")
+	public String editCompany(Model model, @ModelAttribute("company") Company nCompany) {
+		companyService.addCompany(nCompany);
+		return "editCompany";
+	}
 	
 }

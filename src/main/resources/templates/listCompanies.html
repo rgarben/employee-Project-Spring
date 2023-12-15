@@ -21,9 +21,12 @@
       <td th:text="${company.name}"></td>
       <td th:text="${company.address}"></td>
       <td th:text="${company.city}"></td>
-	<td>
-	    <a class="btn btn-primary" th:href="@{'/confirmDelete/' + ${company.id}}">Eliminar</a>
-	</td>
+	  <td>
+	    <a class="btn btn-danger" th:href="@{'/confirmDelete/' + ${company.id}}">Eliminar</a>
+	  </td>
+	  <td>
+	    <a class="btn btn-success" th:href="@{'/editCompany/' + ${company.id}}">Editar</a>
+	  </td>
     </tr>
   </tbody>
 </table>
